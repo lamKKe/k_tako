@@ -25,9 +25,9 @@
 };
 
 &i2c0 {
-  status = "disabled";
+  status = "enabled";
 };
 
 &i2c1 {
-  status = "disabled";
+  status = "enabled";
 };
