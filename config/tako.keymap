@@ -18,6 +18,14 @@
 &lt { quick_tap_ms = <150>; };
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
+        };
+    };
+
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -87,43 +95,43 @@
                 &kp QUOT  &kp COMMA  &kp DOT    &kp P      &kp Y      &kp F      &kp G      &kp C      &kp R      &kp L
                 &hm LGUI A &hm LALT O &hm LCTRL E &hm LSHFT U &kp I      &kp D      &hm RSHFT H &hm RCTRL T &hm LALT N &hm LGUI S
                 &kp SCLN   &kp Q      &kp J       &kp K      &kp X      &kp B      &kp M      &kp W      &kp V      &kp Z
-                                                     &kp SPACE &lt NAV_L TAB       &lt NUM_L ENTER  &lt SYM_L BKSP
+                                                     &kp SPACE &lt 1 TAB       &lt 2 ENTER  &lt 3 BKSP
+            >;
+        };
+
+
+        nav_layer {
+            bindings = <
+            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5     &kp NUMBER_6  &kp N7     &kp N8     &kp N9     &kp N0
+            &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp F12    &kp MINUS     &kp EQUAL  &kp GRAVE  &kp LC(L)  &kp SQT
+            &trans        &trans        &trans        &trans          &trans     &trans        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
+                                        &trans      &trans      &tran      &kp RSHFT
             >;
         };
         other_layer {
             bindings = <
-&kp ESC   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0    &trans  &trans    &kp UP_ARROW    &trans     &trans
-&kp CAPS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp AT_SIGN        &trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
-&kp DEL   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT            &trans  &trans    &trans          &trans     &trans
-                                            &trans           &trans             &trans  &trans
-            >;
-        };
-        nav_layer {
-            bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4    &kp N5     &kp NUMBER_6  &kp N7     &kp N8     &kp N9     &kp N0
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp F12    &kp MINUS     &kp EQUAL  &kp GRAVE  &kp LC(L)  &kp SQT
-&trans        &trans        &trans        &trans          &trans     &trans        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
-                                          &trans          &trans     &mo 4         &kp RSHFT
+            &kp ESC       &trans           &trans           &trans           &trans             &trans            &trans        &trans          &trans     &trans
+            &kp LEFT_GUI  &kp LEFT_ALT     &kp LCTRL        &kp LEFT_SHIFT   &kp AT_SIGN        &kp LEFT_ARROW    &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans
+            &kp DEL       &trans           &trans           &trans           &kp DOT            &trans            &trans        &trans          &trans     &trans
+                                           &trans           &trans             &trans  &trans
             >;
         };
 
-        
-
-        num_layer {
-            bindings = <
-&kp F1        &kp F2        &kp F3        &kp F4          &kp F5          &kp F6  &kp F7  &kp F8  &kp F9   &kp F10
-&kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &trans          &trans  &trans  &trans  &kp F11  &kp F12
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &trans  &trans  &trans  &trans   &trans
-                                          &trans          &trans          &trans  &trans
-            >;
-        };
 
         sym_layer {
             bindings = <
-&kp LBRC   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp RBRC        &trans  &trans  &trans  &trans  &trans
-&kp COLON  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp PLUS        &trans  &trans  &trans  &trans  &trans
-&kp TILDE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)    &trans  &trans  &trans  &trans  &trans
-                                   &kp LS(N0)  &kp UNDER       &trans  &trans
+            &kp LBRC   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp RBRC        &trans  &trans  &trans  &trans  &trans
+            &kp COLON  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp PLUS        &trans  &trans  &trans  &trans  &trans
+            &kp TILDE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)    &trans  &trans  &trans  &trans  &trans
+                                            &kp LS(N0)  &kp UNDER       &trans  &trans
+            >;
+        };
+        num_layer {
+            bindings = <
+            &kp F1        &kp F2        &kp F3        &kp F4          &kp F5          &kp F6  &kp F7  &kp F8  &kp F9   &kp F10
+            &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &trans          &trans  &trans  &trans  &kp F11  &kp F12
+            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &trans  &trans  &trans  &trans   &trans
+                                                      &trans          &trans          &trans  &trans
             >;
         };
     };
