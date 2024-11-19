@@ -11,6 +11,13 @@
     combos {
         compatible = "zmk,combos";
 
+        esccc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+            layers = <0 1 2 3>;
+            timeout-ms = <0>;
+        };
+
         tabbbb {
             bindings = <&kp TAB>;
             key-positions = <2 3>;
@@ -46,28 +53,28 @@
 
         layer_0 {
             bindings = <
-&kp APOS          &kp COMMA       &kp DOT      &kp P           &kp Y        &kp F                   &kp G            &kp C            &kp R        &kp L
-&mt LEFT_SHIFT A  &mt LEFT_ALT O  &mt LCTRL E  &mt LEFT_GUI U  &kp I        &kp D                   &mt RIGHT_GUI H  &mt RIGHT_ALT T  &mt RCTRL N  &mt RIGHT_SHIFT S
-&kp SEMI          &kp Q           &kp J        &kp K           &kp X        &kp B                   &kp M            &kp W            &kp V        &kp Z
-                                               &lt 1 SPACE     &kp SPACE    &mt RIGHT_SHIFT ESCAPE  &lt 2 ENTER
+&kp APOS          &kp COMMA       &kp DOT      &kp P           &kp Y        &kp F            &kp G            &kp C            &kp R        &kp L
+&mt LEFT_SHIFT A  &mt LEFT_ALT O  &mt LCTRL E  &mt LEFT_GUI U  &kp I        &kp D            &mt RIGHT_GUI H  &mt RIGHT_ALT T  &mt RCTRL N  &mt RIGHT_SHIFT S
+&kp SEMI          &kp Q           &kp J        &kp K           &kp X        &kp B            &kp M            &kp W            &kp V        &kp Z
+                                               &lt 1 SPACE     &kp SPACE    &kp RIGHT_SHIFT  &lt 2 ENTER
             >;
         };
 
         layer_1 {
             bindings = <
-&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp NUMBER_6  &kp N7          &kp N8          &kp N9        &kp N0
-&kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_GUI  &kp MINUS    &kp EQUAL     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
-&trans          &trans        &trans        &trans        &trans       &trans        &trans          &trans          &trans        &trans
-                                            &trans        &trans       &trans        &trans
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7          &kp N8          &kp N9        &kp N0
+&kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_GUI  &trans    &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
+&trans          &trans        &trans        &trans        &trans    &trans        &trans          &trans          &trans        &trans
+                                            &trans        &trans    &trans        &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &kp LBKT   &kp LPAR   &trans    &trans  &kp RPAR   &kp RBKT   &trans  &trans
-&trans  &trans  &kp LC(V)  &kp LC(C)  &trans    &trans  &kp LC(X)  &kp LC(V)  &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans  &trans     &trans     &trans  &trans
-                           &trans     &trans    &trans  &trans
+&trans  &kp LBRC  &kp LBKT   &kp LPAR   &trans    &trans  &kp RPAR   &kp RBKT   &kp RBRC  &trans
+&trans  &trans    &kp LC(V)  &kp LC(C)  &trans    &trans  &kp LC(X)  &kp LC(V)  &trans    &trans
+&trans  &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans
+                             &trans     &trans    &trans  &trans
             >;
         };
 
