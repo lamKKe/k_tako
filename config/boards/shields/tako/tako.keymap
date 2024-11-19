@@ -48,42 +48,81 @@
         };
     };
 
+    macros {
+        kemail: kemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp K &kp AT &kp O &kp M &kp O &kp U &kp T &kp H &kp DOT &kp N &kp E &kp T>;
+            label = "KEMAIL";
+        };
+
+        qsemail: qsemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp Q &kp A &kp Z &kp X &kp C &kp D &kp E &kp W &kp S &kp N6 &kp N7 &kp N1 &kp N2 &kp N3 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "QSEMAIL";
+        };
+
+        qemail: qemail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp Q &kp A &kp Z &kp X &kp C &kp D &kp E &kp W &kp S &kp F &kp G &kp H &kp J &kp K &kp L &kp N6 &kp N7 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "QEMAIL";
+        };
+
+        pass: pass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(K) &kp E &kp N &kp N &kp Y &kp LS(L) &kp N0 &kp LS(V) &kp LS(E) &kp LS(R) &kp DOT &kp LS(T) &kp W &kp LS(T)>;
+            label = "PASS";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         layer_0 {
             bindings = <
-&kp APOS          &kp COMMA       &kp DOT      &kp P           &kp Y        &kp F            &kp G            &kp C            &kp R        &kp L
-&mt LEFT_SHIFT A  &mt LEFT_ALT O  &mt LCTRL E  &mt LEFT_GUI U  &kp I        &kp D            &mt RIGHT_GUI H  &mt RIGHT_ALT T  &mt RCTRL N  &mt RIGHT_SHIFT S
-&kp SEMI          &kp Q           &kp J        &kp K           &kp X        &kp B            &kp M            &kp W            &kp V        &kp Z
-                                               &lt 1 SPACE     &kp SPACE    &kp RIGHT_SHIFT  &lt 2 ENTER
+&kp APOS          &kp COMMA       &kp DOT      &kp P           &kp Y        &kp F                 &kp G            &kp C            &kp R        &kp L
+&mt LEFT_SHIFT A  &mt LEFT_ALT O  &mt LCTRL E  &mt LEFT_GUI U  &kp I        &kp D                 &mt RIGHT_GUI H  &mt RIGHT_ALT T  &mt RCTRL N  &mt RIGHT_SHIFT S
+&kp SEMI          &kp Q           &kp J        &kp K           &kp X        &kp B                 &kp M            &kp W            &kp V        &kp Z
+                                               &lt 1 SPACE     &kp SPACE    &mt RIGHT_SHIFT BSPC  &lt 2 ENTER
             >;
         };
 
         layer_1 {
             bindings = <
-&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &kp NUMBER_6  &kp N7          &kp N8          &kp N9        &kp N0
-&kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_GUI  &trans    &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
-&trans          &trans        &trans        &trans        &trans    &trans        &trans          &trans          &trans        &trans
-                                            &trans        &trans    &trans        &trans
+&kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp NUMBER_6  &kp N7          &kp N8          &kp N9        &kp N0
+&kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_GUI  &kp MINUS    &kp EQUAL     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
+&trans          &trans        &trans        &trans        &trans       &trans        &trans          &trans          &trans        &trans
+                                            &trans        &trans       &trans        &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &kp LBKT   &kp LPAR   &trans    &trans  &kp RPAR   &kp RBKT   &trans  &trans
-&trans  &trans  &kp LC(V)  &kp LC(C)  &trans    &trans  &kp LC(X)  &kp LC(V)  &trans  &trans
-&trans  &trans  &trans     &trans     &trans    &trans  &trans     &trans     &trans  &trans
-                           &trans     &trans    &trans  &trans
+&trans  &kp LBRC  &kp LBKT   &kp LPAR   &trans    &trans  &kp RPAR   &kp RBKT   &kp RBRC  &trans
+&trans  &trans    &kp LC(V)  &kp LC(C)  &trans    &trans  &kp LC(X)  &kp LC(V)  &trans    &trans
+&trans  &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans
+                             &trans     &trans    &trans  &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans      &trans      &trans            &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans      &trans      &trans            &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR_ALL    &trans  &kemail  &qsemail  &qemail  &pass
+&trans  &trans  &trans      &trans      &trans            &trans  &trans   &trans    &trans   &trans
+&trans  &trans  &trans      &trans      &trans            &trans  &trans   &trans    &trans   &to 4
                             &trans      &trans            &trans  &trans
+            >;
+        };
+
+        gal {
+            bindings = <
+&kp A   &kp W   &trans  &kp C   &kp V     &trans  &trans  &trans  &trans  &trans
+&trans  &kp S   &kp D   &kp Z   &kp X     &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                        &trans  &to 0     &trans  &trans
             >;
         };
     };
