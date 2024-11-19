@@ -81,7 +81,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        Dvork {
             bindings = <
 &kp APOS          &kp COMMA       &kp DOT      &kp P           &kp Y        &kp F                 &kp G            &kp C            &kp R        &kp L
 &mt LEFT_SHIFT A  &mt LEFT_ALT O  &mt LCTRL E  &mt LEFT_GUI U  &kp I        &kp D                 &mt RIGHT_GUI H  &mt RIGHT_ALT T  &mt RCTRL N  &mt RIGHT_SHIFT S
@@ -90,7 +90,7 @@
             >;
         };
 
-        layer_1 {
+        number {
             bindings = <
 &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp NUMBER_6  &kp N7          &kp N8          &kp N9        &kp N0
 &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_GUI  &kp MINUS    &kp EQUAL     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW
@@ -99,7 +99,7 @@
             >;
         };
 
-        layer_2 {
+        ctrl {
             bindings = <
 &trans  &kp LBRC  &kp LBKT   &kp LPAR   &trans     &trans  &kp RPAR   &kp RBKT   &kp RBRC  &trans
 &trans  &trans    &kp LC(V)  &kp LC(C)  &trans     &trans  &kp LC(X)  &kp LC(V)  &trans    &trans
@@ -108,7 +108,7 @@
             >;
         };
 
-        layer_3 {
+        BT {
             bindings = <
 &trans  &trans  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR_ALL    &trans  &kemail  &qsemail  &qemail  &pass
 &trans  &trans  &trans      &trans      &trans            &trans  &trans   &trans    &trans   &trans
