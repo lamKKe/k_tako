@@ -101,10 +101,10 @@
 
         layer_2 {
             bindings = <
-&trans  &kp LBRC  &kp LBKT   &kp LPAR   &trans    &trans  &kp RPAR   &kp RBKT   &kp RBRC  &trans
-&trans  &trans    &kp LC(V)  &kp LC(C)  &trans    &trans  &kp LC(X)  &kp LC(V)  &trans    &trans
-&trans  &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans
-                             &trans     &trans    &trans  &trans
+&trans  &kp LBRC  &kp LBKT   &kp LPAR   &trans     &trans  &kp RPAR   &kp RBKT   &kp RBRC  &trans
+&trans  &trans    &kp LC(V)  &kp LC(C)  &trans     &trans  &kp LC(X)  &kp LC(V)  &trans    &trans
+&trans  &trans    &trans     &trans     &trans     &trans  &trans     &trans     &trans    &trans
+                             &trans     &kp ESC    &trans  &trans
             >;
         };
 
